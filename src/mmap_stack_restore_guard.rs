@@ -94,8 +94,8 @@ impl Drop for StackRestoreGuard {
             // FIXME: check the error code and decide what to do with it.
             // Perhaps a debug_assertion?
             libc::munmap(self.mapping as *mut std::ffi::c_void, self.size_with_guard);
+            set_stack_limit(self.old_stack_limit);
         }
-        set_stack_limit(self.old_stack_limit);
     }
 }
 

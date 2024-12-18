@@ -1,5 +1,5 @@
 [package]
-name = "stacker"
+name = "rustc-stacker"
 version = "0.1.21"
 edition = "2021"
 rust-version = "1.63"
