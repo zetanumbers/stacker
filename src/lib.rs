@@ -121,13 +121,12 @@ thread_local! {
 }
 
 #[inline(always)]
-fn get_stack_limit() -> Option<usize> {
+pub fn get_stack_limit() -> Option<usize> {
     STACK_LIMIT.with(|s| s.get())
 }
 
 #[inline(always)]
-#[allow(unused)]
-fn set_stack_limit(l: Option<usize>) {
+pub fn set_stack_limit(l: Option<usize>) {
     STACK_LIMIT.with(|s| s.set(l))
 }
 
