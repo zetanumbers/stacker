@@ -1,5 +1,5 @@
 [package]
-name = "stacker"
+name = "rustc-stacker"
 version = "0.1.17"
 rust-version = "1.63"
 authors = ["Alex Crichton <alex@alexcrichton.com>", "Simonas Kazlauskas <stacker@kazlauskas.me>"]
