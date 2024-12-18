@@ -121,7 +121,7 @@ thread_local! {
 }
 
 #[inline(always)]
-pub unsafe fn get_stack_limit() -> Option<usize> {
+pub fn get_stack_limit() -> Option<usize> {
     STACK_LIMIT.with(|s| s.get())
 }
 
@@ -214,7 +214,7 @@ psm_stack_manipulation! {
                     // Perhaps a debug_assertion?
                     libc::munmap(self.new_stack, self.stack_bytes);
                 }
-                set_stack_limit(self.old_stack_limit);
+                unsafe { set_stack_limit(self.old_stack_limit) };
             }
         }
 
